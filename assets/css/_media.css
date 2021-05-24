@@ -1,0 +1,59 @@
+
+/*Media for viewport 0px or greater*/
+@media(min-width:0px){
+    .main-area .banner-area .banner img{
+        height: 20rem;
+    }
+    .main-area .categories a{
+        margin: 1rem 0;
+    }
+
+    .main-area .post-area{
+        margin: 0 5%;
+    }
+
+    .main-area .post-area .col-8-lg .grid{
+        column-count: auto;
+    }
+
+    aside.sidebar .latest-post .new-post .post-image{
+        width: 40%;
+    }
+
+    footer.footer-area > .row div{
+        padding-top: 5%;
+    }
+}
+/*Media for viewport 567px or greater*/
+@media(min-width:567px){
+    .main-area .banner-area .banner img{
+        height: 23rem;
+    }
+    aside.sidebar .latest-post .new-post .post-image{
+        width: 18%;
+    }
+    aside.sidebar .latest-post .new-post{
+        max-height: 10rem;
+    }
+    .main-area .post-area{
+        margin: 0 10%;
+    }
+}
+
+/*Media for viewport 768px or greater*/
+@media(min-width:768px){
+    .main-area .post-area .col-8-lg .grid{
+        column-count: 2;
+    }
+
+    .main-area .banner-area .banner img{
+        height: 30rem;
+    }
+}
+
+/*Media for viewport 1200px or greater*/
+@media(min-width:1200px){
+    .main-area .banner-area .banner img{
+        height: 32rem;
+    }
+}

@@ -3,7 +3,7 @@ Theme Name: ZPress | DEUS
 Theme URI: #
 Author: coricsdev
 Author URI: #
-Description: Just another custom WP Theme
+Description: Just another custom starter WP Theme
 Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
 Version: 1.0
 Requires at least: 5.0
@@ -16,43 +16,217 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/* Import CSS files */
+@import url(./assets/css/_variables.css);
+/* Include Global File */
+@import url(./assets/css/_global.css);
+/* Include Grid File */
+@import url(./assets/css/_grid.css);
+/* Include Header File */
+@import url(./assets/css/_header.css);
+
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body{
-	color: #333;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	font-size: 16px;
+    font:normal 900 1rem var(--font-Ari);
 }
 
-header.header-area{
-	background: lightblue;
-	color: black;
-	margin: 0 auto;
-	padding; 15px;
-	text-align: center;
-	width: 60%;
+/* Banner Area */
+.main-area .banner-area .banner{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
 }
 
-header.header-area h1 a{
-	text-decoration: none;
-	color: #000;
-	font-size: 28px;
+.main-area .banner-area .banner-title{
+    font: normal 800 1.5rem/1rem;
+    height: 100%;
+    width: 100%;
+    max-height: 450px;
+    padding-top: 15%;
+    padding-bottom: 6rem;
+}
+/* Categories Section */
+.main-area .categories{
+    padding: 3rem 0;
+}
+.main-area .categories a>span{
+    border: 1px solid var(--light);
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-left: 1.5rem;
+    background: var(--light);
+    box-shadow: var(--box-shadow2);
+    color: var(--gray);
+    transition: all .5s ease;
+}
+.main-area .categories a:hover > span,
+.main-area .categories a:focus > span {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--light);
+    box-shadow: none;
+}
+/*Post Area Section*/
+.main-area .post-area{
+    margin: 0 10%;
 }
 
-header.header-area h3{
-	color: #000;
-	font-size: 16px;
+.main-area .post-area .grid{
+    column-count: 2;
 }
 
-#main{
-	display: grid;
-	grid-template-columns: 70% 30%;
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
+.main-area .post-area .article{
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    width: auto;
+    display: inline-block;
 }
 
-#main .post-area .post-meta ul{
-	list-style-type: none;
-	display: inline-block;
+.main-area article.blog-post{
+    box-shadow: var(--box-shadow3);
+    border: 1px solid var(--border);
+    transition: box-shadow .7s ease;
+}
+
+.main-area article.blog-post:hover{
+    box-shadow: none;
+}
+
+.main-area article.blog-post .post-info{
+    padding: 2rem;
+}
+
+.main-area article.blog-post .post-info .post-title{
+    padding: 1rem 0;
+}
+.main-area article.blog-post .post-info .hr{
+    margin-top: 3rem;
+    background: var(--gray);
+}
+
+/*Sidebar Area Section*/
+aside.sidebar .latest-post .new-post{
+    border-bottom: 1px solid var(--border);
+    padding: 5% 0;
+    max-height: 10rem;
+}
+aside.sidebar .latest-post .new-post .post-image,
+aside.sidebar .latest-post .new-post .post-title{
+    padding: 0 .6rem;
+}
+
+aside.sidebar .latest-post .new-post .post-title{
+    padding:  .2rem;
+}
+
+aside.sidebar .latest-post .new-post .post-image img{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+/*Sidebar Search Area Section*/
+aside.sidebar .search-area{
+    padding: 8rem 0;
+}
+
+aside.sidebar .search-area .search .form-group{
+    box-shadow: var(--box-shadow2);
+    width: 285px;
+}
+
+/*Sidebar Popular Area Section*/
+aside.sidebar .popular-tags{
+    padding: 4rem 0;
+}
+
+aside.sidebar .popular-tags .tags a,
+footer.footer-area .popular-tags .tags a{
+    margin: 1.3rem 0;
+}
+
+aside.sidebar .popular-tags .tags a span,
+footer.footer-area .popular-tags .tags a span{
+    padding: 1rem 2rem;
+    background: var(--light);
+    border-radius: 50px;
+    margin-right: 1rem;
+    color: var(--dark);
+    transition: background .7s ease;
+}
+
+aside.sidebar .popular-tags .tags a:hover span,
+footer.footer-area .popular-tags .tags a:hover span{
+    background: var(--primary-color);
+    border: 1px solid var(--border);
+}
+
+/*Pagination Area Section*/
+
+.main-area .pagination{
+    background: var(--light);
+    margin: 2rem 0;
+    display: inline-block;
+    padding: 1rem .7rem;
+    border-radius: 50px;
+}
+
+.main-area .pagination a span{
+    padding: .6rem 1rem;
+    border-radius: 450px;
+}
+
+.main-area .pagination a:hover span{
+    background: var(--primary-color);
+    color: var(--light);
+}
+
+/*Footer Area Section*/
+footer.footer-area{
+    background: var(--dark);
+    padding: 1% 10%;
+}
+
+footer.footer-area > .row{
+    padding: 5% 0;
+}
+
+footer.footer-area p.para,
+footer.footer-area .social-media,
+footer.footer-area .recent-post,
+footer.footer-area .popular-tags{
+    padding-left: 1.5rem;
+    padding-top: .9rem;
+}
+
+footer.footer-area .social-media a{
+    padding-right: 1rem;
+}
+
+footer.footer-area .recent-post .column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0;
+}
+
+footer.footer-area .recent-post .posts{
+    padding-top: .9rem;
+}
+
+footer.footer-area .popular-tags .tags a span{
+    padding: .8rem 1rem;
+}
+
+footer.footer-area .popular-tags .tags a{
+    margin-left: 0rem;
+    margin-top: 2rem;
 }
 
