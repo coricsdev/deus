@@ -140,7 +140,7 @@ aside.sidebar .search-area{
 
 aside.sidebar .search-area .search .form-group{
     box-shadow: var(--box-shadow2);
-    width: 285px;
+    width: 228px;
 }
 
 /*Sidebar Popular Area Section*/
@@ -179,12 +179,12 @@ footer.footer-area .popular-tags .tags a:hover span{
     border-radius: 50px;
 }
 
-.main-area .pagination a span{
+.main-area .pagination a, .pagination span{
     padding: .6rem 1rem;
     border-radius: 450px;
 }
 
-.main-area .pagination a:hover span{
+.main-area .pagination a:hover{
     background: var(--primary-color);
     color: var(--light);
 }
